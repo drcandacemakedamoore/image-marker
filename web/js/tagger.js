@@ -77,9 +77,25 @@ $(function () {
         });
     }
 
+    function confirmSaveTagging(callback) {
+        var modal = $("#confirm-save-tagging");
+        var confirmed = false;
+        $("#save-changes").click(function (e) {
+            confirmed = true;
+        });
+        modal.on("hide.bs.modal", function (e) {
+            if (confirmed) {
+                callback();
+            }
+        });
+        modal.modal("show");
+    }
+
     uploads.on("complete", function (response) {
         console.log("complete response " + response.xhr.response);
-        updateImage(JSON.parse(response.xhr.response));
+        confirmSaveTagging(function () {
+            updateImage(JSON.parse(response.xhr.response));
+        });
     });
 
     function imageTagSuccess(section, x, y, w, h, response) {

@@ -109,8 +109,12 @@ class Images(tornado.web.RequestHandler):
         elif cmd == 'tree':
             samples = path.join(prefix, 'var/imarker/web/uploads/samples')
             id = [0]
-            result = self.list_subdirectories(samples, id)
-            result['state'] = {'opened': True}
+            result = None
+            if path.isdir(samples):
+                result = self.list_subdirectories(samples, id)
+                result['state'] = {'opened': True}
+            else:
+                result = {}
             self.write(json.dumps([result]))
 
 

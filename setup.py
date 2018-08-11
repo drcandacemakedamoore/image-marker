@@ -79,6 +79,7 @@ setup(
         'pydicom >= 1.1.0',
         'pydicom-ext >= 0.4.7',
         'pypng >= 0.0.18',
+        'Cython >= 0.23',
     ],
     tests_require=[
         'pytest >= 3.4.2',
