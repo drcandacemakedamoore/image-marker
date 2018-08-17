@@ -6,6 +6,7 @@ import pathlib
 from os import path, scandir
 from sys import prefix
 from glob import glob
+from urllib.parse import unquote
 
 import tornado
 import tornado.ioloop
@@ -66,7 +67,7 @@ class Sample(tornado.web.RequestHandler):
         self.write(json.dumps(stats))
 
     def post(self):
-        parts = [p for p in self.request.path.split('/') if p]
+        parts = [unquote(p) for p in self.request.path.split('/') if p]
         first = parts.pop(0)
         first = parts.pop(0)
         if first == 'save':
