@@ -1,9 +1,10 @@
 This is a program I created to examine texture in radiological imaging. 
 The program can analize DICOM files or even JPEGS. 
 The program then computes some parameters of texture within the area chosed.
-Although I orginically created the program for abdominal imaging, the areas can be changed to suit whichever ones a radiologist would want. 
+Although I orginically created the program for abdominal imaging, the areas can be changed to suit whichever ones a researcher would want by simply changing the code a bit. 
 -
 Practical instructions for non-computer professionals without a strong background in computers:
+
 0. Figure out what kinds of computer system you want to run the program on- Windows? Linux? Max OS?
 Chances are high that if you do not have a strong background in computers you are running Windows or a Mac OS, and you do not have the neccesary libraries to make the program functional. You will need to download Anaconda. 
 Download Anaconda from https://www.anaconda.com/
