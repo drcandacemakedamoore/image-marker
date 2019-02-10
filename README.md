@@ -1,4 +1,31 @@
 This is a program I created to examine texture in radiological imaging. 
-The program can be fed DICOM files from any type of grayscale image or even JPEGS. 
+The program can analize DICOM files or even JPEGS. 
 The program then computes some parameters of texture within the area chosed.
 Although I orginically created the program for abdominal imaging, the areas can be changed to suit whichever ones a radiologist would want. 
+**Practical instructions for non-computer professionals without a strong background in computers:
+0. Figure out what kinds of computer system you want to run the program on- Windows? Linux? Max OS?
+Chances are high that if you do not have a strong background in computers you are running Windows or a Mac OS, and you do not have the neccesary libraries to make the program functional. You will need to download Anaconda. 
+Download Anaconda from https://www.anaconda.com/
+
+1. Start the Anaconda shell
+2. In Anaconda shell activate the program's environment by typing:
+   conda activate image-marker
+3. Previous action should have changed the prompt from saying "(base)"
+to "(image-marker)".  Now, type:
+   d:
+   to switch current directory to D drive.
+4. Type:
+   cd myprograms
+   to switch to "myprograms directory" on D drive.
+5. Now you should be able to deploy the program or start the server:
+   python setup.py install
+   to deploy the program
+   python bin\imarker
+   to run the program (start the server).
+6. Once the server starts, it will print to the terminal the host and
+address it is listening on.
+   By default, it is "localhost:8080".  Navigate your browser to that
+address to see the
+   program's interface.
+   
+   7. If this does not work out for you please email me at doctormakeda@gmail.com ; you can also send complaints, suggestions and so on, please include what kind of system you are running (Windows? Mac? and the browser you opened the program in)...
