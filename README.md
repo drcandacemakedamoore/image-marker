@@ -11,7 +11,12 @@ Chances are high that if you do not have a strong background in computers you ar
 Download Anaconda from https://www.anaconda.com/
 
 1. Start the Anaconda shell
-2. In Anaconda shell activate the program's environment by typing:
+2. If this is the first time you try to run the program, create `conda` environmnet:
+   ``` sh
+   conda create -n image-marker
+   ```
+   For more information about Anaconda environments see: https://uoa-eresearch.github.io/eresearch-cookbook/recipe/2014/11/20/conda/
+3. In Anaconda shell activate the program's environment by typing:
    conda activate image-marker
 3. Previous action should have changed the prompt from saying "(base)"
 to "(image-marker)".  Now, to switch current directory to D drive, type:
