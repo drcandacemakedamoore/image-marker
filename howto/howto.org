@@ -27,10 +27,13 @@
 
 ** Discover what CPU you are using
    1. On Windows you would need to first open file explorer.
+
       [[open-windows-explorer.png]]
    2. Then right-click (invoke context menu) on =My Computer=.
+
       [[open-computer-proprties.png]]
    3. Then inspect your system's properties.
+
       [[discover-cpu-architecture.png]]
 
 ** Install Anaconda
