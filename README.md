@@ -12,6 +12,7 @@ Download Anaconda from https://www.anaconda.com/
 
 1. Start the Anaconda shell
 1.5 realize these instructions are bad...you need to create and environment and tehn run setup.py--but this is near impossible without an infrastructure-aware programmer looking at your specific computer. Continue at your own risk of frustration
+WRITE ME HOW THIS WORKS_ I WILL GET BACK TO YOU AND HELP YOU FIX THE PROBLEMS WITHIN 49 hours
 2. In Anaconda shell activate the program's environment by typing:
    conda activate image-marker
 3. Previous action should have changed the prompt from saying "(base)"
