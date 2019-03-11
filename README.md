@@ -8,6 +8,8 @@ Practical instructions for non-computer professionals without a strong backgroun
 0.Download the program onto you computer. 
 Figure out what kinds of computer system you want to run the program on- Windows? Linux? Max OS?
 Chances are high that if you do not have a strong background in computers you are running Windows or a Mac OS, and you do not have the neccesary libraries to make the program functional. You will need to download Anaconda as well. 
+
+If you want step by step instructions for non-programmers using Windows- go here![howto](howto/howto.org)
 Download Anaconda from https://www.anaconda.com/
 
 1. Start the Anaconda shell
