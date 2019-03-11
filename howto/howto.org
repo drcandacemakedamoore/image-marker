@@ -1,0 +1,202 @@
+* This document explains how to get Image Marker (Dvora) running on MS Windows
+  Below is a step-by step walk-through.
+
+  Watch out for yellow markings on some screenshots, they are there to
+  poit configuration changes you need to do in order to make things work.
+
+** Search for Anaconda
+   Anaconda is a distribution of [[https://en.wikipedia.org/wiki/Python_(programming_language)][Python programming language]] designed
+   for scientific programming. =image-marker= is written in Python and
+   relies on [[https://www.anaconda.com/distribution/][Anaconda]] for downloading support libraries.
+
+   [[search-anaconda-download.png]]
+
+** Find and download Anaconda
+   Anaconda is a fairly popular project with many thousands of users
+   around the world.  If you cannot copy a link from above, use your
+   web search engine to locate it:
+
+   [[find-anaconda.png]]
+
+** Make sure to select correct Anaconda version
+   Anaconda is available for different operating systems and processor
+   architectures.  For example, if you are running MS Windows on a
+   64-bit CPU, then this is likely the option you need:
+
+   [[select-anaconda-download.png]]
+
+** Discover what CPU you are using
+   1. On Windows you would need to first open file explorer.
+
+      [[open-windows-explorer.png]]
+   2. Then right-click (invoke context menu) on =My Computer=.
+
+      [[open-computer-proprties.png]]
+   3. Then inspect your system's properties.
+
+      [[discover-cpu-architecture.png]]
+
+** Install Anaconda
+   Once you have Anaconda downloaded, run its installer.
+
+   [[select-to-install-anaconda.png]]
+
+   Follow the installation wizard to completion.
+
+** Make Anaconda your default Python
+   Python distribution from python.org is the flagship distribution.
+   Both Python from python.org and Anaconda provide the same Python
+   interpreter.  However, if you don't yet have Python installed, and
+   to make things easier for beginners, it's advisable to enable this
+   option:
+
+   [[advanced-install-options.png]]
+
+** We also need Git
+   [[https://en.wikipedia.org/wiki/Git][Git]] is a program that allows collaborative editing.  It is
+   typically used by programmers to cooperate when developing
+   software, but it is also useful for general-purpose file editing.
+   It can store history, offer automatic means of resolving version
+   conflicts in addition to content sharing.  You can use your web
+   search to find Git for Windows download:
+
+   [[search-git-windows.png]]
+
+** Download Git
+   There are many distributions of Git for Windows, for this example,
+   we are going to use the one packaged by SCM:
+
+   [[find-git-windows.png]]
+
+   The download will start automatically, once you navigate to this site
+
+   [[download-git-windows.png]]
+
+** Launch Git installer
+   Once the download finishes, launch it:
+
+   [[launch-git-install.png]]
+
+   As with Anaconda, follow the installation wizard.  The default
+   settings should be fine.
+
+** Run Git Bash
+   Bash stands for Bourne Again Shell, which lost its meaning with
+   time.  In our context, it will refer to a graphical terminal
+   hosting a shell specially configured for using Git.  We need to use
+   it in order to get hold of the source code of =image-marker=.
+
+   [[launch-git-bash.png]]
+
+** Locate Image Marker sources
+   =image-marker= sources are available for general public through the
+   use of free Git hosting provided by GitHub.  You can find them by
+   following this URL:
+
+   https://github.com/drcandacemakedamoore/image-marker
+
+   [[github-clone-repository.png]]
+
+   Once on the page, find the green button titled *clone or download*.
+   Once you press it, the drop-down menu will allow you to copy the
+   URL you need to use with Git:
+
+   https://github.com/drcandacemakedamoore/image-marker.git
+
+   Repeated here for your convenience.
+
+** Clone Image Marker
+   In order to work with =image-marker= sources you will need to use
+   Git Bash to clone them.  Once you have the terminal window open,
+   you should be able to type into it:
+
+   #+BEGIN_SRC sh
+     mkdir projects
+     cd projects
+     clone https://github.com/drcandacemakedamoore/image-marker.git
+   #+END_SRC
+
+   The regular copying and pasting will not work with this terminal
+   (Control+C has a special meaning in this environment: it terminates
+   the currently running program!)  You can, however, invoke context
+   menu (say, by clicking the left mouse key) and then selecting to
+   "paste" as shown in the image:
+
+   [[paste-clone-url.png]]
+
+** Create Conda environment
+   =conda= is a package manager for Anaconda.  We use it to create
+   isolated environments (so that in case you already work on another
+   project we don't mess with it), and to install dependencies of our
+   project.
+
+   To create an environment run:
+
+   #+BEGIN_SRC sh
+     conda create -n image-marker
+   #+END_SRC
+
+   [[answer-conda-prompt.png]]
+
+   You will be prompted to allow environment creation, answer with
+   =Y=.
+
+** Launch Anaconda Prompt
+   It is possible to use =conda= and =python= from GitBash, but it
+   requires more elaborate configuration.  In the interest of
+   simplicity, we will use Anaconda Prompt.  To launch one, press
+   =Windows= key and type /anaconda/.
+
+   [[launch-anaconda-prompt.png]]
+
+** Activate environment
+   Type in the prompt:
+
+   #+BEGIN_SRC sh
+     conda activate image-marker
+   #+END_SRC
+
+   to set up the environment for =image-marker=.
+
+   [[activate-image-marker.png]]
+
+   Then change into directory where you cloned =image-marker=:
+
+   #+BEGIN_SRC sh
+     cd projects
+     cd image-marker
+   #+END_SRC
+
+** Install Image Marker dependencies
+   Finally, you need to run the setup script supplied with
+   =image-marker= to fetch project's dependencies.
+
+   #+BEGIN_SRC sh
+     python setup.py install
+   #+END_SRC
+   
+   [[setup-py-install.png]]
+
+   If all goes well, you now should be able to launch the project.
+
+** Launch Image Marker
+   Depending on your firewall settings, you might be prompted to allow
+   Python to access your local network.  This presents no security
+   riscs as no information is being sent anywhere (that is why it is
+   called "local").
+
+   [[allow-python-local-network.png]]
+
+   #+BEGIN_SRC sh
+     python bin\imarker
+   #+END_SRC
+
+** Interact with Image Marker
+   Now you should be able to interact with =image-marker= in your
+   favorite web browser.  Type:
+
+   : http://localhost:8080
+
+   Into browser's address bar to navigate to the project's front page.
+
+   [[enjoy-image-marker.png]]
