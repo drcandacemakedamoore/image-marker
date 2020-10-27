@@ -1,8 +1,8 @@
-This is a program I created to examine texture in radiological imaging. 
+This is a program my husband and I created to examine texture in radiological imaging. 
 The program can analize DICOM files or even JPEGS. 
 The program then computes some parameters of texture within the area chosed.
 Although I orginically created the program for abdominal imaging, the areas can be changed to suit whichever ones a researcher would want by simply changing the code a bit. 
--
+I have placed a version on Zenodo.-
 Practical instructions for non-computer professionals without a strong background in computers:
 
 0.Download the program onto you computer. 
